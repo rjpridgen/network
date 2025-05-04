@@ -1,16 +1,8 @@
 [General]
-disable-geoip-db-auto-update = true
-compatibility-mode = 1
+dns-server = 8.8.8.8, 8.8.4.4
 ipv6 = true
-ipv6-vif = auto
-include-all-networks = true
-include-cellular-services = true
-show-error-page = false
-auto-suspend = false
-exclude-simple-hostnames = true
-icmp-forwarding = false
+test-timeout = 5
 loglevel = verbose
-allow-dns-svcb = true
 
 [Rule]
 AND,((OR,((IP-CIDR,192.30.252.0/22), (IP-CIDR,185.199.108.0/22), (IP-CIDR,140.82.112.0/20), (IP-CIDR,143.55.64.0/20), (IP-CIDR6,2a0a:a440::/29), (IP-CIDR6,2606:50c0::/32), (IP-CIDR,20.201.28.151/32), (IP-CIDR,20.205.243.166/32), (IP-CIDR,20.87.245.0/32), (IP-CIDR,4.237.22.38/32), (IP-CIDR,20.207.73.82/32), (IP-CIDR,20.27.177.113/32), (IP-CIDR,20.200.245.247/32), (IP-CIDR,20.175.192.147/32), (IP-CIDR,20.233.83.145/32), (IP-CIDR,20.29.134.23/32), (IP-CIDR,20.199.39.232/32), (IP-CIDR,20.217.135.5/32), (IP-CIDR,4.225.11.194/32), (IP-CIDR,4.208.26.197/32), (IP-CIDR,20.26.156.215/32)))),DIRECT // web
