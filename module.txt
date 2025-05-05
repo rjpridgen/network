@@ -1,4 +1,4 @@
-[General]
+[General
 ipv6 = true
 
 [Rule]
