@@ -1,0 +1,17 @@
+{
+  "name": "@siguiente/net",
+  "version": "0.0.1",
+  "module": "cli/aws_ip.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build:aws": "bun build --compile --target bun --outfile .build/awsip ./cli/aws_ip.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "consola": "^3.4.2"
+  }
+}
