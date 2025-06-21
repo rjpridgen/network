@@ -1,4 +1,5 @@
 import consola from "consola";
+import { aws, date } from "./macros/aws.js" with { type: 'macro' }
 
 interface AwsCidrRegions {
     prefixes: Prefix[]
@@ -9,7 +10,13 @@ interface Prefix {
     region: string
 }
 
-const {prefixes}: AwsCidrRegions = await fetch("https://ip-ranges.amazonaws.com/ip-ranges.json").then((res) => res.json() as any)
+const backup = await aws()
+const backupDate = date()
+
+const {prefixes}: AwsCidrRegions = await fetch("https://ip-ranges.amazonaws.com/ip-ranges.json").then((res) => res.json() as any).catch(() => {
+    console.info("Network error: unable to connect. Reverting to backup from", backupDate)
+    return JSON.parse(backup)
+})
 
 const regions = new Set(prefixes.map(r => r.region))
 
